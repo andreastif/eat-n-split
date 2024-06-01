@@ -1,8 +1,8 @@
 import { RouterProvider } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage";
-import { Home } from "./components/Home";
-import { Calculator } from "./components/splitpage/calculator/Calculator";
+import ErrorPage from "../error/ErrorPage";
+import { Home } from "../home/Home";
+import { Calculator } from "../splitpage/calculator/Calculator";
 
 const router = createBrowserRouter([
   {
