@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Disclaimer } from "../Disclaimer";
+import { Disclaimer } from "../disclaimer/Disclaimer";
 
 export const Home = () => {
   return (
