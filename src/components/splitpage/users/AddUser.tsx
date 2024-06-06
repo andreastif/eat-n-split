@@ -12,7 +12,7 @@ const AddUser = ({ onAddUser, onShowAddUser, showAddUser }: AddUserProps) => {
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setUserProps({ name: "", img: "" });
+    setUserProps({ name: "", img: "https://i.pravatar.cc/100?img=6" });
     onAddUser(userProps.name, userProps.img);
   };
 
@@ -28,7 +28,7 @@ const AddUser = ({ onAddUser, onShowAddUser, showAddUser }: AddUserProps) => {
         <div className="flex flex-row p-1 mx-auto">
           <div className="mx-1 w-32">🧙‍♂️ Friend name</div>
           <input
-            className="border w-40"
+            className="border w-40 rounded-md px-1"
             type="text"
             onChange={(e) => setUserProps((props) => ({ ...props, name: e.target.value }))}
             value={userProps.name}
@@ -37,7 +37,7 @@ const AddUser = ({ onAddUser, onShowAddUser, showAddUser }: AddUserProps) => {
         <div className="flex flex-row p-1 mx-auto">
           <div className="mx-1 w-32">🌄 Image URL</div>
           <input
-            className="border w-40"
+            className="border w-40 rounded-md px-1"
             type="text"
             onChange={(e) => setUserProps((props) => ({ ...props, img: e.target.value }))}
             value={userProps.img}
