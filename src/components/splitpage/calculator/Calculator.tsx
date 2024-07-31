@@ -32,7 +32,7 @@ const Calculator = ({ users, onUpdateUserBalance }: CalculatorProps) => {
   };
 
   return (
-    <div className="my-4">
+    <div className="my-4" key={selectedUser?.id}>
       <div className="border-2 rounded-sm shadow-lg min-h-screen-50 py-10 w-78 sm:w-96 bg-fuchsia-50">
         <div className="text-center text-4xl my-10 mx-6 uppercase tracking-tighter ">
           SPLIT BILL WITH {selectedUser?.name}

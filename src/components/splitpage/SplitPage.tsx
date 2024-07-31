@@ -6,9 +6,9 @@ import AddUser from "./users/AddUser";
 
 const SplitPage = () => {
   const [users, setUsers] = useState<User[]>([
-    { id: 1, name: "You", balance: 0, img: "https://i.pravatar.cc/100?img=2", isSelected: false },
-    { id: 2, name: "Jake", balance: 10, img: "https://i.pravatar.cc/100?img=3", isSelected: false },
-    { id: 3, name: "Kim", balance: -32, img: "https://i.pravatar.cc/100?img=5", isSelected: false },
+    { id: 111, name: "You", balance: 0, img: "https://i.pravatar.cc/100?img=2", isSelected: false },
+    { id: 222, name: "Jake", balance: 10, img: "https://i.pravatar.cc/100?img=3", isSelected: false },
+    { id: 333, name: "Kim", balance: -32, img: "https://i.pravatar.cc/100?img=5", isSelected: false },
   ]);
   const [showAddUser, setShowAddUser] = useState<boolean>(false);
 
@@ -39,7 +39,11 @@ const SplitPage = () => {
       <div className="flex flex-col ">
         <Users users={users} onSelectUser={handleSelectUser} />
         {users.findIndex((user) => user.isSelected) > -1 ? (
-          <Calculator users={users} onUpdateUserBalance={handleUpdateUserBalance} />
+          <Calculator
+            key={users.find((e) => e.isSelected ?? e)?.id}
+            users={users}
+            onUpdateUserBalance={handleUpdateUserBalance}
+          />
         ) : (
           <div className="my-2"></div>
         )}
